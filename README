@@ -1,0 +1,7 @@
+Beer IOU - Zendcon2011
+
+This application was created for a Zendcon 2011 session, Big Server is watching you.
+
+The goal of the session was to demonstrate some of the common pitfalls, performance hogs that are common in php applications.
+
+Disclaimer: The application is intentionally written with flaws, and was put together quickly for the session. It does not necessarily follow good programming practices, and should not be used as a base for another application. Consider yourselves warned!

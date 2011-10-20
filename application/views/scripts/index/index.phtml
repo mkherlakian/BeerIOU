@@ -1,0 +1,16 @@
+	  <div class="row">
+	    <div class="punchline">
+		  <span>Keep track of</span> <span class="curly">{</span> <p>who you owe<br/>who owes you</p> <span class="curly">}</span> BEER! 
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="buttons">
+		  <a href="<?= $this->url(array('controller' => 'send', 'action' => 'invite', 'mode' => 'i_owe')); ?>" class="btn">
+		    <img src="images/owe_someone.png">
+		  </a>
+		  <div class="line-sep"></div>
+		  <a href="<?= $this->url(array('controller' => 'send', 'action' => 'invite', 'mode' => 'am_owed')); ?>" class="btn">
+		    <img src="images/someone_owes.png">
+		  </a>
+	    </div>
+	  </div>

@@ -1,0 +1,51 @@
+body { font-family: 'arial'; padding: 0; margin: 0; background-color: #dfdfdf; }
+h1 { font-family: 'times new roman'; }
+h2 { font-family: arial; font-size: 1.9em; font-weight: normal;}
+a img { border: 0 }
+input, select { border: 1px solid #212121; font-size: 0.9em; width: 250px; }
+
+
+.general_errors, 
+.form_error { color: red; font-size: 0.8em; }
+
+.fieldgroup { padding: 0 }
+.fieldgroup fieldset { width: 400px; }
+.errors { margin: 5px; color: red; }
+.fieldgroup dd { margin-bottom: 5px; }
+.header { width: 1200px; height: 320px; background-color: #2b3477; margin: 0 auto; position: relative; }
+.logo_beer { position: relative; width: 329px; height: 321px; background: url(../images/beer_logo.png); float: left; margin: -1px 0 0 10px; }
+.logo_iou { position: relative; width: 251px; height: 172px; background: url(../images/beer_IOU.png); float: left; margin: 25px 0 0 10px; }
+.register { position: absolute; width: 450px; height: 250px; right: 15px; top: 20px; color: white;}
+.register h2 { text-transform: uppercase; margin: 0 0 5px 45px; color: white; }
+.register .label { width: 110px; height: 22px; text-align: right; display: block; float: left; margin: 12px 20px 12px 0; font-size: 1.2em; } 
+.register .field { font-size: 1.3em; border: 1px solid #424242; width: 250px; margin: 10px 0 10px 0; float: left; }
+.register .btn_submit { background-color: #994608; width: 147px; height: 40px; margin: 10px 65px; float: right; }
+.header_menu { position: absolute; bottom: 5px; right: 25px; }
+.header_menu ul { list-style-type: none; font-size: 1.1em; text-transform: uppercase; margin: 0; }
+.header_menu ul li { display: inline; margin: 0 10px 0 10px; }
+.header_menu ul li a { color: white; text-decoration: none; }
+
+.bd { width: 1180px; margin: auto; position: relative; background-color: white; padding: 1px 10px;}
+.col { float: left; width: 48% }
+.clearfix { clear:both }
+
+.bd .row { display: table-row; }
+.bd .punchline { margin: auto; font-size: 2.5em; font-family: 'times new roman'; text-align: center; display: table-cell; vertical-align: middle; width: 1200px; height: 130px; }
+.bd .punchline img { vertical-align: middle; }
+.bd .punchline .curly { font-size: 2.8em; line-height: 0em; margin-bottom: 20px;  vertical-align: middle; display: inline-block; }
+.bd .punchline p { display: inline-block; margin: 0 0 10px 0; vertical-align: middle; line-height: 1.5em; }
+
+.bd .buttons { margin: 0 auto; height: 270px; display: table-cell; text-align: center; vertical-align: middle; }
+.bd .buttons .btn { width: 478px; background: url(../images/beer_background.png); line-height: 166px; display: inline-block; margin: 0 50px 0 50px; vertical-align: middle; }
+.bd .buttons .line-sep { width: 3px; display: inline-block; height: 240px; background-color: black; vertical-align: middle; }
+
+.accountTable { border-collapse:collapse; margin: 20px auto; width: 450px; }
+.accountTable th, .accountTable td { border: 1px solid black; padding: 4px; }
+.accountTable td p { width: 95%; margin: 9px auto; border-top: 1px solid black; border-bottom: 1px solid black; }
+
+.footer { width: 1200px; margin: 0 auto; position: relative; background-color: #fbde7b; height: 150px; overflow: hidden; }
+.footer p { margin-top: 0px; padding-top: 5px; margin-left: 20px; }
+.footer .zendcon { position: absolute; top: 10px; right: -400px; }
+.barlocations { width: 300px; height: 110px; overflow: hidden; margin-left: 20px;  }
+.footer #scroller { width: 300px; }
+.footer #scroller .li { height: 100px; }

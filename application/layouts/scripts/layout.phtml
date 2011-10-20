@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+<?php 
+	$this->headMeta()
+		->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8')
+        ->appendHttpEquiv('Content-Language', 'en-US');
+	$this->headMeta()
+		->appendName('robots', 'index, follow, all')
+		->appendName('Author', 'Maurice Kherlakian')
+		->appendName('Copyright', 'Maurice Kherlakian')
+		->appendName('Publisher', 'Maurice Kherlakian')
+		->appendName('Description', 'The beer IOU project - Keep track of who you owe/owes you BEER!')
+		->appendName('Keywords', 'beer, owe, lager');
+?>
+
+<?php echo $this->headMeta(); ?>
+
+<?php $this->headLink()
+	->prependStylesheet('/css/styles.css')
+	->appendStylesheet('/css/jquery.simplyscroll-1.0.4.css') ?>
+<?php echo $this->headLink(); ?>
+
+<?php $this->headScript()
+	->prependFile('/javascript/jquery-1.6.4.min.js')
+	->appendFile('/javascript/jquery.simplyscroll-1.0.4.js'); ?>
+
+<?php echo $this->headScript(); ?>
+
+<?php $this->headTitle('The Beer IOU project'); ?>
+<?php echo $this->headTitle(); ?>
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"/>
+  </head>
+  <body>
+<!-- START HEADER -->
+	<div class="header">
+	  <div class="logo_beer"></div>
+	  <div class="logo_iou"></div>
+	  <?php echo $this->placeholder('banner_content'); ?>
+	  <div class="header_menu">
+<?php echo $this->navigation(); ?>
+	  </div>
+	</div>
+<!-- END HEADER -->
+<!-- START BODY -->	
+    <div class="bd">
+<?php 
+	// FlashMessenger integration, (setup in bootstrap)
+	if (isset($this->messages)): ?>
+<ul class="general_errors">
+	<?php foreach ($this->messages as $message): ?>
+        <li><?php echo $message ?></li>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>    
+		<?php echo $this->layout()->content; ?>
+    </div>
+<!-- END BODY -->
+<!-- START FOOTER -->
+    <div class="footer">
+    	<p><u>Close bars</u></p>
+    	<div class="barlocations">
+    		<ul id="scroller"><?php echo $this->partialLoop('footer/bar-locations.phtml', $this->barLocations); ?></ul>
+    	</div>
+    	<img class="zendcon" src="/images/zendcon-header-2011.png"/>
+    </div>
+    <script type="text/javascript">
+		$(function(){
+			$("#scroller").simplyScroll({
+				autoMode: 'loop',
+				horizontal: false
+			});
+		});
+    </script>
+<!-- END FOOTER -->
+  </body>
+</html>	

@@ -1,0 +1,56 @@
+<h2>My Account</h2>
+
+<div style="widht: 100%">
+<h3>My favorite beer</h3>
+	<?php echo $this->favoriteBeerForm; ?>
+</div>
+
+<div class="col">
+<h3>I owe</h3>
+<?php if(!count($this->usersIOwe)): ?>
+<p>Yay! I don't owe any beers!!!</p>
+<?php else: ?>
+<table class="accountTable">
+	<thead>
+	</thead>
+<?php foreach($this->usersIOwe as $user): ?>
+<?php $user->setInviteService(new Application_Service_Invite()); ?>
+		<tr>
+			<td>
+				<?php echo (trim($user->getName()) != '' ? $user->getName() : $user->getEmail()); ?>
+			</td>
+			<td>
+				<?php foreach($user->getOwedInvites($this->authenticatedUser) as $invite): ?>
+					<p><b>Beers:</b> <?= $invite->getNumberOfBeers(); ?><br/><b>Date:</b> <?= date('F jS Y', strtotime($invite->getDate())); ?><br/><b>Favor size:</b> <?= $invite->getFavorSize();?><br/><b>Reason:</b> <?= $invite->getReason(); ?></p>
+				<?php endforeach; ?>
+			</td>
+		</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="col">
+<h3>I am owed from</h3>
+<?php if(!count($this->usersAmOwed)): ?>
+<p>I am not owed any beers :(</p>
+<?php else: ?>
+<table class="accountTable">
+	<thead>
+	</thead>
+<?php foreach($this->usersAmOwed as $user): ?>
+<?php $user->setInviteService(new Application_Service_Invite()); ?>
+		<tr>
+			<td>
+				<?php echo (trim($user->getName()) != '' ? $user->getName() : $user->getEmail()); ?>
+			</td>
+			<td>
+				<?php foreach($user->getOwingInvites($this->authenticatedUser) as $invite): ?>
+					<p><b>Beers:</b> <?= $invite->getNumberOfBeers(); ?><br/><b>Date:</b> <?= date('F jS Y', strtotime($invite->getDate())); ?><br/><b>Favor size:</b> <?= $invite->getFavorSize();?><br/><b>Reason:</b> <?= $invite->getReason(); ?></p>
+				<?php endforeach; ?>
+			</td>
+		</tr>
+<?php endforeach; ?>
+<?php endif; ?>
+</table>
+</div>
+<div class="clearfix"></div>

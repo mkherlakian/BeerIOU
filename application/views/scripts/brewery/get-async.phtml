@@ -1,0 +1,23 @@
+<p id="breweries">
+</p>
+
+<script type="text/javascript">
+	$(function(){
+		timeout();
+	});
+
+	function timeout() {
+		setTimeout('poll()', 500);
+	}
+
+	function poll() {
+		$.getJSON('/brewery/poll-breweries/key/<?= $this->key ?>', function(data) {
+			if(data.status=='pending') {
+				$('#breweries').html('Loading... please wait.');
+				timeout();
+			} else {
+				$('#breweries').html(data.data);
+			}
+		}); 
+	}
+</script>

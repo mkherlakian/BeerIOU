@@ -1,0 +1,25 @@
+<?php $this->placeholder('banner_content')->captureStart() ?>
+	  <div class="register">
+		<form id="signup_form" action="<?php echo $this->url(array('controller' => 'index', 'action' => 'signup')); ?>" method="post">
+	  	<h2>Sign up</h2>
+	  	<input type="hidden" name="banner" value="1"/>
+		<span class="label">First name</span>
+		<input class="field" type="text" name="firstName" id="first_name"/>
+		<span class="label">Last name</span>
+		<input class="field" type="text" name="lastName" id="last_name"/>
+		<span class="label">Email</span>
+		<input class="field" type="text" name="email" id="email"/>
+		<a id="form_signup_submit" href="<?php echo $this->url(array('controller' => 'index', 'action' => 'signup')); ?>" class="btn_submit">
+			<img src="/images/btn_register_submit.png">
+		</a>
+		</form>
+	  </div>
+<script type="text/javascript">
+	$(function(){
+		$('#form_signup_submit').click(function() {
+			$('#signup_form').submit();
+			return false;
+		});
+	});
+</script>  
+<?php $this->placeholder('banner_content')->captureEnd() ?>

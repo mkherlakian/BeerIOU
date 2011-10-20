@@ -1,0 +1,12 @@
+<h2>Thank you for using the Beer IOU project</h2>
+
+<p>The following invites have been sent:</p>
+<ul>
+<?php foreach($this->sentInvites as $invite): ?>
+<li>An <?php if($invite->getOriginUser() == $invite->getFromUser()): ?>'I owe' <?php else: ?>'I am owed'<?php endif; ?> invite to
+<?php if($invite->getOriginUser() == $invite->getFromUser()) echo $invite->getToUser()->getEmail(); else echo $invite->getFromUser()->getEmail();; ?>
+ for: <?php echo $invite->getReason(); ?></li>
+<?php endforeach; ?>
+</ul>
+
+<p>Go to <a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'my-account'))?>">my account</a>
