@@ -5,3 +5,18 @@ This application was created for a Zendcon 2011 session, Big Server is watching 
 The goal of the session was to demonstrate some of the common pitfalls, performance hogs that are common in php applications.
 
 Disclaimer: The application is intentionally written with flaws, and was put together quickly for the session. It does not necessarily follow good programming practices, and should not be used as a base for another application. Consider yourselves warned!
+
+Database:
+---------
+The database used for the project is mysql.
+There are 2 files in the /data/ folder of the project: 
+beer_iou-schema-only.sql which only holds the mysql schema, no data
+beer_iou.sql.gz a gzipeed database dump of the database I used in the presentation
+
+Install:
+--------
+$ mkdir folder-name
+$ git clone git@github.com:mkherlakian/BeerIOU folder-name
+Set the document root of your vhost/server to be the public/ folder of the application
+
+Replace the database parameters in the application/configs/application.ini file to match your database
